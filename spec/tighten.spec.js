@@ -1,6 +1,7 @@
 import { JSDOM } from 'jsdom'
 import { TEXT_NODE } from 'jsdom/lib/jsdom/living/node-type.js'
-import { isWhitespace, tighten } from '~/src/tighten.js'
+import { isBlank, isText, tighten } from '~/src/tighten.js'
+
 
 beforeAll(() => {
   global.Node = {
@@ -8,31 +9,48 @@ beforeAll(() => {
   }
 })
 
-describe('isWhitespace(node)', () => {
+
+describe('isBlank(node)', () => {
   let node, actual
 
-  describe('when node is text and whitespace', () => {
+  describe('when node value is blank', () => {
     it('returns true', () => {
       node = JSDOM.fragment('<ul> <li></li></ul>').firstChild.firstChild
-      actual = isWhitespace(node)
+      actual = isBlank(node)
       expect(actual).toBe(true)
     })
   })
-  describe('when node is text but not whitespace', () => {
+
+  describe('when node value is not blank', () => {
     it('returns false', () => {
       node = JSDOM.fragment('<span>One<span>Two</span></span>').firstChild.firstChild
-      actual = isWhitespace(node)
-      expect(actual).toBe(false)
-    })
-  })
-  describe('when node is not text', () => {
-    it('returns false', () => {
-      node = JSDOM.fragment('<ul><li></li></ul>').firstChild.firstChild
-      actual = isWhitespace(node)
+      actual = isBlank(node)
       expect(actual).toBe(false)
     })
   })
 })
+
+
+describe('isText(node)', () => {
+  let node, actual
+
+  describe('when node type is text', () => {
+    it('returns true', () => {
+      node = JSDOM.fragment('<ul> <li></li></ul>').firstChild.firstChild
+      actual = isText(node)
+      expect(actual).toBe(true)
+    })
+  })
+
+  describe('when node type is not text', () => {
+    it('returns false', () => {
+      node = JSDOM.fragment('<ul><li></li></ul>').firstChild.firstChild
+      actual = isText(node)
+      expect(actual).toBe(false)
+    })
+  })
+})
+
 
 describe('tighten(element)', () => {
   let input, expected

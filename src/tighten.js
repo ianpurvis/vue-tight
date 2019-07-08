@@ -1,19 +1,21 @@
-const blankMatcher = /^\s*$/
+const DefaultBlankMatcher = /^\s*$/
 
-function isWhitespace(node) {
+function isBlank(node, matcher = DefaultBlankMatcher) {
+  return matcher.test(node.nodeValue)
+}
+
+function isText(node) {
   return node.nodeType === Node.TEXT_NODE
-    && blankMatcher.test(node.nodeValue)
 }
 
 function tighten(el) {
-  for (const node of el.childNodes) {
-    if (isWhitespace(node)) {
-      el.removeChild(node)
-    }
-  }
+  Array.from(el.childNodes)
+    .filter(node => isText(node) && isBlank(node))
+    .forEach(node => el.removeChild(node))
 }
 
 export {
-  isWhitespace,
+  isBlank,
+  isText,
   tighten
 }
