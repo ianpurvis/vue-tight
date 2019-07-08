@@ -1,0 +1,26 @@
+{
+  "name": "vue-tite",
+  "version": "0.0.0",
+  "description": "Vue directive that removes whitespace between elements",
+  "author": "Ian Purvis (https://purvisresearch.com)",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^2.0.0"
+  },
+  "scripts": {
+    "test": "npx jest",
+    "debug": "npx node-inspect $(npm bin)/jest"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "node-inspect": "^1.11.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ianpurvis/vue-tite.git"
+  }
+}
