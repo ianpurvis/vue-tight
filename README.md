@@ -24,35 +24,18 @@ For example, the spans in the following code are separated by collapsed whitespa
 </div>
 ```
 
-<style>
-.example div {
-  font-size: 2.5rem;
-}
-
-.example span:first-child {
-  background: magenta;
-}
-
-.example span:last-child {
-  background: cyan;
-}
-</style>
-
-<section class="example">
-  <div>
-    <span>Exam</span>
-    <span>ple</span>
-  </div>
-</section>
+<div style="font-size: 2.5rem;">
+  <span style="background: magenta;">Exam</span>
+  <span style="background: cyan;">ple</span>
+</div>
 
 In order to eliminate whitespace between inline elements, you must eliminate that whitespace at the source:
 
 ```html
 <div><span>Exam</span><span>ple</span></div>
 ```
-<section class="example">
-  <div><span>Exam</span><span>ple</span></div>
-</section>
+
+<div style="font-size: 2.5rem;"><span style="background: magenta;">Exam</span><span style="background: cyan;">ple</span></div>
 
 However, this can quickly create long, unmanageable lines of code. One workaround for eliminating whitespace while preserving readability has been to insert line-breaking comments between inline elements:
 
