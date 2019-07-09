@@ -1,5 +1,5 @@
 {
-  "name": "vue-tite",
+  "name": "vue-tight",
   "version": "0.0.0",
   "description": "Vue directive that removes whitespace between elements",
   "main": "dist/index.js",
@@ -27,6 +27,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ianpurvis/vue-tite.git"
+    "url": "https://github.com/ianpurvis/vue-tight.git"
   }
 }
