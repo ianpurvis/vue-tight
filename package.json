@@ -19,7 +19,7 @@
   "devDependencies": {
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.0",
-    "@babel/preset-env": "^7.5.0",
+    "@babel/preset-env": "^7.5.2",
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
     "node-inspect": "^1.11.6"
