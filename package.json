@@ -13,8 +13,8 @@
   },
   "scripts": {
     "build": "bin/build",
-    "test": "npx jest",
-    "debug": "npx node-inspect $(npm bin)/jest"
+    "test": "bin/jest",
+    "debug": "bin/debug"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
