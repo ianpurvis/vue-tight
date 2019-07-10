@@ -2,7 +2,7 @@
 
 As a developer,  
 I want to prune whitespace between inline elements,  
-so that I can write **tite** layouts.
+so that I can write **tight** layouts.
 
 
 ## Background
@@ -12,52 +12,54 @@ We often use whitespace to make HTML more readable. However, when creating layou
 For example, the spans in the following code are separated by collapsed whitespace:
 
 ```html
-<style type="text/css">
-  div { font-size: 3rem }
-  span:first-child { background: magenta }
-  span:last-child { background: cyan }
-</style>
-
-<div>
+<h3>
   <span>Exam</span>
   <span>ple</span>
-</div>
+</h3>
 ```
+<blockquote>
+  <h3>
+    <span>Exam</span>
+    <span>ple</span>
+  </h3>
+</blockquote>
 
-<div style="font-size: 2.5rem;">
-  <span style="background: magenta;">Exam</span>
-  <span style="background: cyan;">ple</span>
-</div>
 
 In order to eliminate whitespace between inline elements, you must eliminate that whitespace at the source:
 
 ```html
-<div><span>Exam</span><span>ple</span></div>
+<h3>
+  <span>Exam</span><span>ple</span>
+</h3>
 ```
 
-<div style="font-size: 2.5rem;"><span style="background: magenta;">Exam</span><span style="background: cyan;">ple</span></div>
+<blockquote>
+  <h3>
+    <span>Exam</span><span>ple</span>
+  </h3>
+</blockquote>
 
-However, this can quickly create long, unmanageable lines of code. One workaround for eliminating whitespace while preserving readability has been to insert line-breaking comments between inline elements:
+However, this can create long, unmanageable lines of code. One workaround for eliminating whitespace while preserving readability has been to insert line-breaking comments between inline elements:
 
 ```html
-<div><!--
+<h3><!--
   --><span>Exam</span><!--
   --><span>ple</span>
-</div>
+</h3>
 ```
 
 Or, you might style a parent element with `font-size: 0` while styling its children with the intended font size:
 
 ```html
 <style type="text/css">
-  div { font-size: 0 }
-  span { font-size: 3rem }
+  .tight { font-size: 0 }
+  .tight > * { font-size: 1.25rem }
 </style>
 
-<div>
+<h3 class="tight">
   <span>Exam</span>
   <span>ple</span>
-</div>
+</h3>
 ```
 
 But, if these workarounds feel gross to you, you are in the right place.
