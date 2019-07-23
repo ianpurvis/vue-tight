@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ianpurvis/vue-tight.svg?branch=master)](https://travis-ci.org/ianpurvis/vue-tight)
+
 # Vue-Tight
 
 As a developer,  
