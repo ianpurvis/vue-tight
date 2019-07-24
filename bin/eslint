@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-$(npm bin)/eslint 'src/**'
+$(npm bin)/eslint $@
