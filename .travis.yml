@@ -10,3 +10,4 @@ script:
   - bin/eslint src spec
   - bin/build
   - bin/jest
+  - bin/codecov
