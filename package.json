@@ -1,7 +1,7 @@
 {
   "name": "vue-tight",
-  "version": "1.0.1",
-  "description": "Vue directive that removes whitespace between elements",
+  "version": "1.0.2",
+  "description": "Vue directive that eliminates whitespace between elements",
   "main": "dist/index.js",
   "author": "Ian Purvis (https://purvisresearch.com)",
   "license": "MIT",
