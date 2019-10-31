@@ -24,7 +24,7 @@
     "babel-jest": "^24.9.0",
     "codecov": "^3.5.0",
     "eslint": "^6.2.2",
-    "eslint-plugin-jest": "^22.15.2",
+    "eslint-plugin-jest": "^23.0.2",
     "jest": "^24.9.0",
     "lint-staged": "^9.2.5",
     "node-inspect": "^1.11.6"
