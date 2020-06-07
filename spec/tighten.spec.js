@@ -55,6 +55,7 @@ describe('isText(node)', () => {
 describe('tighten(element)', () => {
   let input, expected
 
+  /* eslint jest/expect-expect: ["error", { "assertFunctionNames": ["expect", "expectTighten"] }] */
   const expectTighten = (input, expected) => {
     const el = JSDOM.fragment(input).firstChild
     tighten(el)
