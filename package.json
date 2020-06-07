@@ -17,10 +17,10 @@
     "debug": "bin/debug"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "babel-eslint": "^10.0.3",
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "babel-eslint": "^10.1.0",
     "babel-jest": "^25.1.0",
     "codecov": "^3.5.0",
     "eslint": "^6.2.2",
