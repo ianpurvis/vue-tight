@@ -2,5 +2,7 @@
   "extends": [
     "config:base"
   ],
-  "rangeStrategy": "bump"
+  "rangeStrategy": "bump",
+  "semanticCommits": true,
+  "semanticCommitScope": null
 }
