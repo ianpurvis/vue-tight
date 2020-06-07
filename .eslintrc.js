@@ -1,34 +1,47 @@
 module.exports = {
   env: {
     browser: true,
-    es6: true,
-    node: true
+    es6: true
   },
-  extends: "eslint:recommended",
+  extends: 'eslint:recommended',
   overrides: [
     {
       files: [
-        "**/*.spec.js"
+        '*.config.js',
+        '.*rc.js',
+        'bin/**/*.js',
+        'lib/**/*.js'
       ],
       env: {
-        jest: true
+        node: true
       },
-      plugins: [
-        "jest"
+    },
+    {
+      files: [
+        '**/*.spec.js'
       ],
-      rules: {
-        "jest/no-disabled-tests": "warn",
-        "jest/no-focused-tests": "error",
-        "jest/no-identical-title": "error",
-        "jest/prefer-to-have-length": "warn",
-        "jest/valid-expect": "error"
-      }
+      env: {
+        node: true
+      },
+      extends: [
+        'plugin:jest/recommended',
+        'plugin:jest/style'
+      ],
+      plugins: [
+        'jest'
+      ]
     }
   ],
-  parser: "babel-eslint",
+  parser: 'babel-eslint',
   parserOptions: {
-    sourceType: "module"
+    ecmaVersion: 2018,
+    sourceType: 'module'
   },
+  root: true,
   rules: {
+    indent: [ 'error', 2 ],
+    'linebreak-style': [ 'error', 'unix' ],
+    quotes: [ 'error', 'single', { 'avoidEscape': true } ],
+    semi: [ 'error', 'never' ]
   }
 }

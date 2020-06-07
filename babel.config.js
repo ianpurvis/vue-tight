@@ -1,7 +1,7 @@
-const MIN_BABEL_VERSION = 7;
+const MIN_BABEL_VERSION = 7
 
 module.exports = (api) => {
-  api.assertVersion(MIN_BABEL_VERSION);
+  api.assertVersion(MIN_BABEL_VERSION)
   api.cache(true)
 
   return {
