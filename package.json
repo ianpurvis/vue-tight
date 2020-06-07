@@ -26,8 +26,7 @@
     "eslint": "^7.2.0",
     "eslint-plugin-jest": "^23.13.2",
     "jest": "^26.0.1",
-    "lint-staged": "^10.2.9",
-    "node-inspect": "^1.11.6"
+    "lint-staged": "^10.2.9"
   },
   "repository": {
     "type": "git",
