@@ -1,16 +1,31 @@
-import babel from '@rollup/plugin-babel'
-import resolve from '@rollup/plugin-node-resolve'
+import { resolve } from 'path'
+import { getBabelOutputPlugin } from '@rollup/plugin-babel'
+import resolvePlugin from '@rollup/plugin-node-resolve'
+
+const babelConfigPath = resolve(__dirname, 'babel.config.js')
 
 export default {
   input: 'src/index.js',
-  output: {
-    file: 'dist/vue-tight.js',
-    format: 'cjs'
-  },
+  output: [{
+    file: 'dist/vue-tight.cjs.js',
+    format: 'cjs',
+    plugins: [
+      getBabelOutputPlugin({
+        configFile: babelConfigPath,
+        envName: 'cjs'
+      })
+    ]
+  },{
+    file: 'dist/vue-tight.esm.js',
+    format: 'esm',
+    plugins: [
+      getBabelOutputPlugin({
+        configFile: babelConfigPath,
+        envName: 'esm'
+      })
+    ]
+  }],
   plugins: [
-    resolve(),
-    babel({
-      babelHelpers: 'bundled'
-    })
+    resolvePlugin(),
   ]
 }
