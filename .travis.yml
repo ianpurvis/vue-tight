@@ -6,7 +6,7 @@ node_js:
   - "10"
   - "12"
 script:
-  - bin/eslint src spec
+  - bin/lint
   - bin/build
   - bin/jest --collectCoverageFrom='src/**'
   - bin/codecov --disable=gcov --file=coverage/coverage-final.json
