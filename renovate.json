@@ -2,6 +2,10 @@
   "extends": [
     "config:base"
   ],
+  "packageRules": [{
+    "depTypeList": ["peerDependencies"],
+    "enabled": false
+  }],
   "rangeStrategy": "bump",
   "semanticCommits": true,
   "semanticCommitScope": null
