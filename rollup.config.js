@@ -24,6 +24,15 @@ export default {
         envName: 'esm'
       })
     ]
+  },{
+    file: 'dist/vue-tight.es5.js',
+    format: 'esm',
+    plugins: [
+      getBabelOutputPlugin({
+        configFile: babelConfigPath,
+        envName: 'es5'
+      })
+    ]
   }],
   plugins: [
     resolvePlugin(),

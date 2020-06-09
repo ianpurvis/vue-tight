@@ -5,7 +5,7 @@ module.exports = (api) => {
 
   const presetEnv = [ '@babel/preset-env' ]
 
-  if (api.env('esm')) {
+  if (api.env(['cjs', 'esm'])) {
     presetEnv.push({
       bugfixes: true,
       targets: {
