@@ -28,7 +28,7 @@
     "eslint": "^7.4.0",
     "eslint-plugin-jest": "^23.13.2",
     "jest": "^26.0.1",
-    "lint-staged": "^10.2.9",
+    "lint-staged": "^10.2.11",
     "rollup": "^2.15.0"
   },
   "repository": {
