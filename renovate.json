@@ -8,10 +8,10 @@
     ],
     "enabled": false
   },{
-    "automerge": true
+    "automerge": true,
     "updateTypes": [
       "minor",
-      "patch",
+      "patch"
     ]
   }],
   "rangeStrategy": "bump",
