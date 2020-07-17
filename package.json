@@ -23,11 +23,11 @@
     "@rollup/plugin-babel": "^5.1.0",
     "@rollup/plugin-node-resolve": "^8.4.0",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^26.0.1",
+    "babel-jest": "^26.1.0",
     "codecov": "^3.7.0",
     "eslint": "^7.4.0",
     "eslint-plugin-jest": "^23.18.0",
-    "jest": "^26.0.1",
+    "jest": "^26.1.0",
     "lint-staged": "^10.2.11",
     "rollup": "^2.21.0"
   },
