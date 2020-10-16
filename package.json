@@ -29,7 +29,7 @@
     "eslint-plugin-jest": "^24.1.0",
     "jest": "^26.5.3",
     "lint-staged": "^10.4.1",
-    "rollup": "^2.31.0"
+    "rollup": "^2.32.0"
   },
   "repository": {
     "type": "git",
