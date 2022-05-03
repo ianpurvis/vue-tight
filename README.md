@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.com/ianpurvis/vue-tight.svg?branch=master)](https://travis-ci.com/ianpurvis/vue-tight)
-[![codecov](https://codecov.io/gh/ianpurvis/vue-tight/branch/master/graph/badge.svg)](https://codecov.io/gh/ianpurvis/vue-tight)
+[![codecov](https://codecov.io/gh/ianpurvis/vue-tight/branch/trunk/graph/badge.svg)](https://codecov.io/gh/ianpurvis/vue-tight)
 
 # Vue-Tight
 
