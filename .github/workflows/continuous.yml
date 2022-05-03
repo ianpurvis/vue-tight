@@ -1,0 +1,35 @@
+---
+name: continuous
+on:
+  push:
+    branches:
+      - trunk
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+jobs:
+  build:
+    env:
+      CI: true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'npm'
+      - run: npm ci
+      - run: bin/lint
+      - run: bin/build
+      - run: bin/jest --collectCoverageFrom='src/**'
+      - run: bin/codecov --disable=gcov --file=coverage/coverage-final.json
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    strategy:
+      fail-fast: false
+      matrix:
+        node:
+          - 10
+          - 12
