@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/ianpurvis/vue-tight.svg?branch=master)](https://travis-ci.com/ianpurvis/vue-tight)
+[![continuous](https://github.com/ianpurvis/vue-tight/actions/workflows/continuous.yml/badge.svg)](https://github.com/ianpurvis/vue-tight/actions/workflows/continuous.yml)
 [![codecov](https://codecov.io/gh/ianpurvis/vue-tight/branch/trunk/graph/badge.svg)](https://codecov.io/gh/ianpurvis/vue-tight)
 
 # Vue-Tight
