@@ -29,7 +29,7 @@
     "eslint-plugin-jest": "^26.2.2",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
-    "lint-staged": "^12.4.1",
+    "lint-staged": "^12.4.2",
     "rollup": "^2.74.1"
   },
   "repository": {
