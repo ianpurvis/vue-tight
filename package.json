@@ -30,7 +30,7 @@
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
     "lint-staged": "^12.5.0",
-    "rollup": "^2.75.4"
+    "rollup": "^2.75.5"
   },
   "repository": {
     "type": "git",
