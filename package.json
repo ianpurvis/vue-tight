@@ -13,9 +13,10 @@
     "vue": "^2.0.0"
   },
   "scripts": {
-    "build": "bin/build",
-    "test": "bin/jest",
-    "debug": "bin/debug"
+    "build": "rollup -c",
+    "lint": "eslint .",
+    "test": "jest",
+    "test:debug": "node inspect -- node_modules/.bin/jest --runInBand"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
