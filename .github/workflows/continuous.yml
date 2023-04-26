@@ -24,9 +24,12 @@ jobs:
       - run: npm run lint
       - run: npm run build
       - run: npm run test -- --verbose
-      - run: bin/codecov --disable=gcov --file=coverage/coverage-final.json
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - run: npm run test --collectCoverageFrom='src/**'
+      - uses: codecov/codecov-action@v3
+        with:
+          fail_ci_if_error: true
+          files: coverage/coverage-final.json
+          token: ${{ secrets.CODECOV_TOKEN }}
     strategy:
       fail-fast: false
       matrix:
