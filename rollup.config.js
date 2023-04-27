@@ -8,9 +8,6 @@ export default {
   },{
     file: 'dist/vue-tight.esm.js',
     format: 'esm',
-  },{
-    file: 'dist/vue-tight.es5.js',
-    format: 'esm',
   }],
   plugins: [
     resolvePlugin(),
