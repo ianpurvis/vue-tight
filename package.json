@@ -4,6 +4,7 @@
   "description": "Vue directive that eliminates whitespace between elements",
   "author": "Ian Purvis (https://purvisresearch.com)",
   "license": "MIT",
+  "type": "module",
   "files": [
     "dist"
   ],
