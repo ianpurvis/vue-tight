@@ -1,11 +1,9 @@
 import { JSDOM } from 'jsdom'
-import { TEXT_NODE } from 'jsdom/lib/jsdom/living/node-type.js'
 import { isBlank, isText, tighten } from '~/src/tighten.js'
-
 
 beforeAll(() => {
   global.Node = {
-    TEXT_NODE
+    TEXT_NODE: 3
   }
 })
 
