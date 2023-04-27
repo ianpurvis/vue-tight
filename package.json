@@ -4,27 +4,27 @@
   "description": "Vue directive that eliminates whitespace between elements",
   "author": "Ian Purvis (https://purvisresearch.com)",
   "license": "MIT",
+  "type": "module",
   "files": [
     "dist"
   ],
-  "main": "dist/vue-tight.cjs.js",
-  "module": "dist/vue-tight.esm.js",
+  "exports": {
+    "import": "./dist/vue-tight.mjs",
+    "require": "./dist/vue-tight.cjs"
+  },
+  "main": "./dist/vue-tight.cjs",
+  "module": "./dist/vue-tight.mjs",
   "peerDependencies": {
     "vue": "^2.0.0"
   },
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint .",
-    "test": "jest",
-    "test:debug": "node inspect -- node_modules/.bin/jest --runInBand"
+    "test": "node --experimental-vm-modules -- node_modules/.bin/jest",
+    "test:debug": "node inspect --experimental-vm-modules -- node_modules/.bin/jest --runInBand"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.4",
-    "@babel/eslint-parser": "^7.21.3",
-    "@babel/preset-env": "^7.21.4",
-    "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-node-resolve": "^15.0.2",
-    "babel-jest": "^29.5.0",
     "codecov": "^3.8.2",
     "eslint": "^8.39.0",
     "eslint-plugin-jest": "^27.2.1",

@@ -113,14 +113,6 @@ Finally, add the `v-tight` directive to your template elements:
 
 And voilà! Whitespace between the children of the tightened element will not be rendered.
 
-## ES5 Support
-
-This package contains dual CommonJS and ES module exports which have been built for modern environments. A CommonJS build that has been transpiled to ES5 has been included as well:
-
-```javascript
-const Tight = require('vue-tight/dist/vue-tight.es5.js')
-```
-
 ## Links
 
 - [CSS2 Whitespace Processing Model](https://www.w3.org/TR/CSS2/text.html#white-space-model)
