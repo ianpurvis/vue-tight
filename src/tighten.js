@@ -1,11 +1,11 @@
 const DefaultBlankMatcher = /^\s*$/
 
-function isBlank(node, matcher = DefaultBlankMatcher) {
-  return matcher.test(node.nodeValue)
+function isBlank({ nodeValue }, matcher = DefaultBlankMatcher) {
+  return matcher.test(nodeValue)
 }
 
-function isText(node) {
-  return node.nodeType === Node.TEXT_NODE
+function isText({ nodeType }) {
+  return nodeType === Node.TEXT_NODE
 }
 
 function tighten({ childElementCount, childNodes }) {
