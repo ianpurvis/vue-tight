@@ -1,4 +1,4 @@
-import tighten from '~/src/index.js'
+import vTight from '~/src/index.js'
 
 const data = [
   ['children without space', '<i></i><i></i>', '<i></i><i></i>'],
@@ -10,7 +10,7 @@ const data = [
   ['blank text', ' ', ' '],
 ]
 
-describe('tighten(element)', () => {
+describe('vTight(element)', () => {
   let element
 
   describe.each(data)('when element contains %s', (name, content, expected) => {
@@ -19,7 +19,7 @@ describe('tighten(element)', () => {
       element.innerHTML = content
     })
     it('removes space between children', () => {
-      tighten(element)
+      vTight(element)
       expect(element.innerHTML).toBe(expected)
     })
   })

@@ -8,7 +8,7 @@ function isText({ nodeType }) {
   return nodeType === Node.TEXT_NODE
 }
 
-function tighten({ childElementCount, childNodes }) {
+function vTight({ childElementCount, childNodes }) {
   if (childElementCount > 0) {
     [...childNodes]
       .filter(n => isText(n) && isBlank(n))
@@ -16,4 +16,4 @@ function tighten({ childElementCount, childNodes }) {
   }
 }
 
-export default tighten
+export default vTight
