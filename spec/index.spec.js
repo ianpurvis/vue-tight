@@ -1,4 +1,4 @@
-import vTight from '~/src/index.js'
+import vTight from '~/src/index.mjs'
 
 const data = [
   ['children without space', '<i></i><i></i>', '<i></i><i></i>'],
