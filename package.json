@@ -15,7 +15,7 @@
   "main": "./dist/vue-tight.cjs",
   "module": "./dist/vue-tight.mjs",
   "peerDependencies": {
-    "vue": "^2.0.0"
+    "vue": ">=2.0.0"
   },
   "scripts": {
     "build": "rollup -c",
