@@ -16,4 +16,4 @@ function vTight({ childElementCount, childNodes }) {
   }
 }
 
-export default vTight
+module.exports = vTight
