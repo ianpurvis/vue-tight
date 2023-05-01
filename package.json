@@ -6,7 +6,9 @@
   "license": "MIT",
   "type": "module",
   "files": [
-    "src"
+    "./LICENSE",
+    "./README.md",
+    "./src"
   ],
   "exports": {
     "import": "./src/index.mjs",
