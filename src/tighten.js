@@ -14,8 +14,4 @@ function tighten(el) {
     .forEach(node => el.removeChild(node))
 }
 
-export {
-  isBlank,
-  isText,
-  tighten
-}
+export { tighten }
