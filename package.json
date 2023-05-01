@@ -18,7 +18,6 @@
     "vue": ">=2.0.0"
   },
   "scripts": {
-    "build": "rollup -c",
     "lint": "eslint .",
     "test": "node --experimental-vm-modules -- node_modules/.bin/jest",
     "test:debug": "node inspect --experimental-vm-modules -- node_modules/.bin/jest --runInBand"
