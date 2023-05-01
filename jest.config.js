@@ -4,7 +4,7 @@ export default {
     'src/**/*.{js,cjs,mjs}'
   ],
   coverageProvider: 'v8',
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   moduleNameMapper: {
     '~(.*)$': '<rootDir>/$1',
   },
