@@ -1,6 +1,19 @@
-import { tighten } from './tighten.js'
+const DefaultBlankMatcher = /^\s*$/
 
-export default {
-  bind: tighten,
-  update: tighten,
+function isBlank({ nodeValue }, matcher = DefaultBlankMatcher) {
+  return matcher.test(nodeValue)
 }
+
+function isText({ nodeType }) {
+  return nodeType === Node.TEXT_NODE
+}
+
+function vTight({ childElementCount, childNodes }) {
+  if (childElementCount > 0) {
+    [...childNodes]
+      .filter(n => isText(n) && isBlank(n))
+      .forEach(n => n.remove())
+  }
+}
+
+export default vTight

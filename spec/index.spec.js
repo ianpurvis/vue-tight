@@ -1,10 +1,26 @@
-import tight from '~/src/index.js'
+import vTight from '~/src/index.js'
 
-describe('tight', () => {
-  it('implements bind', () => {
-    expect(typeof tight.bind).toBe('function')
-  })
-  it('implements update', () => {
-    expect(typeof tight.update).toBe('function')
+const data = [
+  ['children without space', '<i></i><i></i>', '<i></i><i></i>'],
+  ['children with space between', '<i></i> <i></i>', '<i></i><i></i>'],
+  ['children with space around', ' <i></i><i></i> ', '<i></i><i></i>'],
+  ['text without space', 'aeiou', 'aeiou'],
+  ['text with space between', 'a e i o u', 'a e i o u'],
+  ['text with space around', ' aeiou ', ' aeiou '],
+  ['blank text', ' ', ' '],
+]
+
+describe('vTight(element)', () => {
+  let element
+
+  describe.each(data)('when element contains %s', (name, content, expected) => {
+    beforeEach(() => {
+      element = document.body
+      element.innerHTML = content
+    })
+    it('removes space between children', () => {
+      vTight(element)
+      expect(element.innerHTML).toBe(expected)
+    })
   })
 })
