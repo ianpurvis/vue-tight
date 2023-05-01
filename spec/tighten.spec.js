@@ -1,82 +1,25 @@
-import { JSDOM } from 'jsdom'
-import { isBlank, isText, tighten } from '~/src/tighten.js'
+import { tighten } from '~/src/tighten.js'
 
-beforeAll(() => {
-  global.Node = {
-    TEXT_NODE: 3
-  }
-})
-
-
-describe('isBlank(node)', () => {
-  let node, actual
-
-  describe('when node value is blank', () => {
-    it('returns true', () => {
-      node = JSDOM.fragment('<ul> <li></li></ul>').firstChild.firstChild
-      actual = isBlank(node)
-      expect(actual).toBe(true)
-    })
-  })
-
-  describe('when node value is not blank', () => {
-    it('returns false', () => {
-      node = JSDOM.fragment('<span>One<span>Two</span></span>').firstChild.firstChild
-      actual = isBlank(node)
-      expect(actual).toBe(false)
-    })
-  })
-})
-
-
-describe('isText(node)', () => {
-  let node, actual
-
-  describe('when node type is text', () => {
-    it('returns true', () => {
-      node = JSDOM.fragment('<ul> <li></li></ul>').firstChild.firstChild
-      actual = isText(node)
-      expect(actual).toBe(true)
-    })
-  })
-
-  describe('when node type is not text', () => {
-    it('returns false', () => {
-      node = JSDOM.fragment('<ul><li></li></ul>').firstChild.firstChild
-      actual = isText(node)
-      expect(actual).toBe(false)
-    })
-  })
-})
-
+const data = [
+  ['children without space', '<i></i><i></i>', '<i></i><i></i>'],
+  ['children with space between', '<i></i> <i></i>', '<i></i><i></i>'],
+  ['children with space around', ' <i></i><i></i> ', '<i></i><i></i>'],
+  ['text without space', 'aeiou', 'aeiou'],
+  ['text with space between', 'a e i o u', 'a e i o u'],
+  ['text with space around', ' aeiou ', ' aeiou '],
+]
 
 describe('tighten(element)', () => {
-  let input, expected
+  let element
 
-  /* eslint jest/expect-expect: ["error", { "assertFunctionNames": ["expect", "expectTighten"] }] */
-  const expectTighten = (input, expected) => {
-    const el = JSDOM.fragment(input).firstChild
-    tighten(el)
-    const actual = el.outerHTML
-    expect(actual).toBe(expected)
-  }
-
-  describe('when element does not have children', () => {
-    it('does nothing', () => {
-      input = expected = '<div></div>'
-      expectTighten(input, expected)
+  describe.each(data)('when element contains %s', (name, content, expected) => {
+    beforeEach(() => {
+      element = document.body
+      element.innerHTML = content
     })
-  })
-
-  describe('when element has children', () => {
-    it('removes whitespace text nodes', () => {
-      input =
-`<ul>
-  <li></li>
-  <li></li>
-</ul>`
-      expected = '<ul><li></li><li></li></ul>'
-      expectTighten(input, expected)
+    it('removes space between children', () => {
+      tighten(element)
+      expect(element.innerHTML).toBe(expected)
     })
   })
 })
