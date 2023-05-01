@@ -7,6 +7,7 @@ const data = [
   ['text without space', 'aeiou', 'aeiou'],
   ['text with space between', 'a e i o u', 'a e i o u'],
   ['text with space around', ' aeiou ', ' aeiou '],
+  ['blank text', ' ', ' '],
 ]
 
 describe('tighten(element)', () => {

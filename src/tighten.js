@@ -8,10 +8,12 @@ function isText(node) {
   return node.nodeType === Node.TEXT_NODE
 }
 
-function tighten(el) {
-  Array.from(el.childNodes)
-    .filter(node => isText(node) && isBlank(node))
-    .forEach(node => el.removeChild(node))
+function tighten({ childElementCount, childNodes }) {
+  if (childElementCount > 0) {
+    [...childNodes]
+      .filter(n => isText(n) && isBlank(n))
+      .forEach(n => n.remove())
+  }
 }
 
 export { tighten }
