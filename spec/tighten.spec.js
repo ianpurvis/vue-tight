@@ -1,4 +1,4 @@
-import { tighten } from '~/src/tighten.js'
+import tighten from '~/src/tighten.js'
 
 const data = [
   ['children without space', '<i></i><i></i>', '<i></i><i></i>'],

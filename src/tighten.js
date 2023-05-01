@@ -16,4 +16,4 @@ function tighten({ childElementCount, childNodes }) {
   }
 }
 
-export { tighten }
+export default tighten
