@@ -5,11 +5,7 @@
   "author": "Ian Purvis (https://purvisresearch.com)",
   "license": "MIT",
   "type": "module",
-  "files": [
-    "./LICENSE",
-    "./README.md",
-    "./src"
-  ],
+  "files": ["./LICENSE", "./README.md", "./src"],
   "exports": {
     "import": "./src/index.mjs",
     "require": "./src/index.cjs"
@@ -20,13 +16,16 @@
     "vue": ">=2.0.0"
   },
   "scripts": {
-    "lint": "eslint .",
+    "check": "biome check --error-on-warnings .",
+    "fix": "biome check --apply .",
+    "fix:unsafe": "biome check --apply-unsafe .",
+    "format": "biome format --write .",
+    "init": "git config core.hooksPath .githooks",
     "test": "node --experimental-vm-modules -- node_modules/.bin/jest",
     "test:debug": "node inspect --experimental-vm-modules -- node_modules/.bin/jest --runInBand"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-plugin-jest": "^28.2.0",
+    "@biomejs/biome": "^1.7.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.2.2"
@@ -35,10 +34,5 @@
     "type": "git",
     "url": "https://github.com/ianpurvis/vue-tight.git"
   },
-  "keywords": [
-    "vue",
-    "directive",
-    "frontend",
-    "javascript"
-  ]
+  "keywords": ["vue", "directive", "frontend", "javascript"]
 }
