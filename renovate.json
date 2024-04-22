@@ -1,19 +1,15 @@
 {
-  "extends": [
-    "config:base"
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "depTypeList": ["peerDependencies"],
+      "enabled": false
+    },
+    {
+      "automerge": true,
+      "updateTypes": ["minor", "patch"]
+    }
   ],
-  "packageRules": [{
-    "depTypeList": [
-      "peerDependencies"
-    ],
-    "enabled": false
-  },{
-    "automerge": true,
-    "updateTypes": [
-      "minor",
-      "patch"
-    ]
-  }],
   "rangeStrategy": "bump",
   "semanticCommits": true,
   "semanticCommitScope": null

@@ -1,9 +1,7 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
-    "ignore": [
-      "package-lock.json"
-    ]
+    "ignore": ["package-lock.json"]
   },
   "organizeImports": {
     "enabled": true

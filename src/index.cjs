@@ -10,9 +10,9 @@ function isText({ nodeType }) {
 
 function vTight({ childElementCount, childNodes }) {
   if (childElementCount > 0) {
-    [...childNodes]
-      .filter(n => isText(n) && isBlank(n))
-      .forEach(n => n.remove())
+    ;[...childNodes]
+      .filter((n) => isText(n) && isBlank(n))
+      .forEach((n) => n.remove())
   }
 }
 

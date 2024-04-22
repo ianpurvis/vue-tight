@@ -5,11 +5,7 @@
   "author": "Ian Purvis (https://purvisresearch.com)",
   "license": "MIT",
   "type": "module",
-  "files": [
-    "./LICENSE",
-    "./README.md",
-    "./src"
-  ],
+  "files": ["./LICENSE", "./README.md", "./src"],
   "exports": {
     "import": "./src/index.mjs",
     "require": "./src/index.cjs"
@@ -38,10 +34,5 @@
     "type": "git",
     "url": "https://github.com/ianpurvis/vue-tight.git"
   },
-  "keywords": [
-    "vue",
-    "directive",
-    "frontend",
-    "javascript"
-  ]
+  "keywords": ["vue", "directive", "frontend", "javascript"]
 }
