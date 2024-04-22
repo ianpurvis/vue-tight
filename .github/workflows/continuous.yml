@@ -22,7 +22,7 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
           node-version: ${{ matrix.node }}
       - run: npm ci
-      - run: npm run lint
+      - run: npm run check
       - run: npm run test -- --verbose
       - uses: codecov/codecov-action@v4
         with:
