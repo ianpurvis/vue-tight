@@ -25,7 +25,7 @@
     "test:debug": "node inspect --experimental-vm-modules -- node_modules/.bin/jest --runInBand"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.8.2",
+    "@biomejs/biome": "^1.8.3",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.2.7"
